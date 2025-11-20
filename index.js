@@ -1,13 +1,18 @@
-const express = require("express");
-const app = express();
-app.set("view engine", "views");
+// index.js
+const express = require('express');
+const path = require('path');
 
-let port = 3000;
-app.listen(port, () => {
-    console.log('app is listening');
-})
-app.get("/", (req, res) => {
-    const quotes = require("./quote.json");
-    let number = Math.floor(Math.random() * quotes.quotes.length);
-    res.render("quotepage.ejs", { quotelist: quotes, num: number });
-})
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.get('/', (req, res) => {
+  res.render('quotepage');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});

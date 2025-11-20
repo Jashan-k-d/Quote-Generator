@@ -1,70 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(to right, #74ebd5, #9face6);
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quote Generator — Quotable Edition</title>
 
-        .card {
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            background: rgb(255, 255, 255);
-        }
-
-        .quote {
-            font-size: 1.6rem;
-            font-style: italic;
-            color: #333;
-        }
-
-        .author {
-            font-size: 1.2rem;
-            color: #555;
-        }
-
-        .btn-custom {
-            background-color: #6f42c1;
-            color: white;
-            border-radius: 30px;
-            padding: 10px 25px;
-        }
-
-        .btn-custom:hover {
-            background-color: #5a33a3;
-        }
-    </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+<body class="theme-light">
 
-<body>
-
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card text-center p-4">
-                    <div class="card-body">
-                        <p class="quote mb-4">"<%= quotelist.quotes[num].quote %>"</p>
-                        <p class="author">— <%= quotelist.quotes[num].author %>
-                        </p>
-                        <a href="/" class="btn btn-custom mt-4">Get Another Quote</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <a class="navbar-brand fw-bold" href="/">Quote Generator</a>
+
+      <div class="d-flex ms-auto gap-2 align-items-center">
+        <select id="categorySelect" class="form-select form-select-sm" style="width:200px;">
+          <option value="">All categories</option>
+        </select>
+
+        <input id="searchInput" class="form-control form-control-sm" placeholder="Search author or text (press Enter)" style="width:260px;" />
+
+        <select id="themeSelect" class="form-select form-select-sm" style="width:150px;">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="gradient">Gradient</option>
+          <option value="pastel">Pastel</option>
+        </select>
+      </div>
     </div>
+  </nav>
 
+  <main class="container d-flex align-items-center justify-content-center" style="min-height:70vh;">
+    <div class="quote-card card p-4 shadow-lg">
+      <div class="card-body text-center">
+        <div id="loader" class="mb-3" style="display:none;">Loading…</div>
+        <div id="quoteText" class="h4 mb-3">Loading…</div>
+        <div id="quoteAuthor" class="text-muted mb-3">—</div>
 
+        <div class="d-flex justify-content-center gap-2 flex-wrap">
+          <button id="newQuoteBtn" class="btn btn-primary"><i class="fa fa-sync"></i> New Quote</button>
+          <button id="copyBtn" class="btn btn-outline-secondary"><i class="fa fa-copy"></i> Copy</button>
+          <button id="tweetBtn" class="btn btn-info text-white"><i class="fa fa-twitter"></i> Tweet</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
 </body>
-
 </html>

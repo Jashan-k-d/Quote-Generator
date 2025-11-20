@@ -1,0 +1,73 @@
+/* public/css/style.css */
+
+:root {
+  --card-radius: 14px;
+}
+
+/* card layout */
+.quote-card {
+  max-width: 720px;
+  width: 100%;
+  border-radius: var(--card-radius);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* quote text */
+#quoteText {
+  font-family: "Georgia", serif;
+  font-weight: 600;
+  line-height: 1.3;
+  transition: opacity 180ms ease;
+}
+#quoteAuthor {
+  transition: opacity 180ms ease;
+}
+
+/* Theme: Light */
+.theme-light {
+  background: #f7f8fb;
+  color: #222;
+}
+.theme-light .quote-card { background: #ffffff; }
+
+/* Theme: Dark */
+.theme-dark {
+  background: #0e1014;
+  color: #e9eef5;
+}
+.theme-dark .quote-card { background: rgba(18,20,24,0.85); color: #e9eef5; }
+
+/* Theme: Gradient */
+.theme-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+.theme-gradient .quote-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); color: #fff; }
+
+/* Theme: Pastel */
+.theme-pastel {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #222;
+}
+.theme-pastel .quote-card { background: rgba(255,255,255,0.9); }
+
+body, .quote-card {
+  transition: rgba(255,255,255,0.9) 300ms ease, color 300ms ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* loader */
+#loader {
+  font-style: italic;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  #searchInput, #categorySelect, #themeSelect {
+    display: none;
+  }
+}
