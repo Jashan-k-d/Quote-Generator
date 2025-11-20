@@ -1,50 +1,97 @@
-# Random Quote Generator
+Random Quote Generator — API Powered
 
-A simple web application that displays a random quote each time you visit or refresh the page. Built with **Node.js**, **Express.js**, and **EJS** templating, and styled using **Bootstrap 5**.
+A modern, interactive quote generator built with Node.js, Express.js, EJS, and the Quotable API. Includes category filtering, quote search, theme switching, copy-to-clipboard, and tweet sharing. This version replaces the old local JSON file with live API quotes, making it an excellent polished portfolio project.
 
-## Features
+Features
 
-- Displays a random quote and its author from a JSON file
-- Server-side rendering with EJS templates
-- Responsive and modern UI using Bootstrap and custom CSS
-- Easy to run locally with minimal setup
+Fetches quotes from the Quotable API
 
-## Technologies Used
+Category filter (love, wisdom, technology, happiness, etc.)
 
-- Node.js
-- Express.js
-- EJS (Embedded JavaScript Templates)
-- Bootstrap 5
-- HTML & CSS
+Search quotes by keyword or author
 
-## Installation
+Theme switcher (Light, Dark, Gradient, Pastel)
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/random-quote-generator.git
-Navigate into the project directory:
+Copy quote to clipboard
 
-cd random-quote-generator
+Tweet quote button
+
+Responsive modern UI using Bootstrap 5
+
+Smooth fade animations
+
+Server-side rendering with EJS
+
+Technologies Used
+
+Node.js
+
+Express.js
+
+EJS Templates
+
+Bootstrap 5
+
+JavaScript (Fetch API)
+
+HTML & CSS
+
+Quotable API
+
+Installation & Setup
+
+Clone the repository:
+
+git clone https://github.com/yourusername/Quote-Generator.git
+
+
+Go into the project folder:
+
+cd Quote-Generator
+
+
 Install dependencies:
 
 npm install
+
+
 Start the server:
 
 node index.js
-Open your browser and go to:
+
+
+Open the app in your browser:
 
 http://localhost:3000
-Project Structure
-index.js — main server file where Express is set up and routes are defined
 
-quote.json — JSON file containing an array of quotes and authors
 
-views/quotepage.ejs — EJS template for rendering the quote page
+How the App Works
+Fetch random quote
+https://api.quotable.io/random
 
-public/ — (optional) directory for static assets like CSS or images if added
+Fetch by category
+https://api.quotable.io/random?tags=love
+
+Search quotes
+https://api.quotable.io/quotes?query=life&limit=1
+
+Load categories
+https://api.quotable.io/tags
 
 Usage
-Click the Get Another Quote button to load a new random quote.
+
+New Quote → loads random or filtered quote
+
+Search bar → enter text and press Enter
+
+Category dropdown → pick a tag
+
+Theme selector → change appearance
+
+Copy → saves quote text to clipboard
+
+Tweet → shares the quote on X/Twitter
 
 License
-This project is open-source and available under the MIT License.
+
+This project is open-source under the MIT License.
